@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neotech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <section class="table" id="table">
+    </section>
+    <button id='add-item'>Add item</button>
+    <div class="modal close">
+        <div class="modal-container" id="main-modal-container">
+            <div class="modal-content">
+                <button id="close-modal">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="19.227" height="19.227" viewBox="0 0 19.227 19.227">
+                        <g id="Сгруппировать_2117" data-name="Сгруппировать 2117" transform="translate(1.414 1.414)">
+                            <line id="Линия_164" data-name="Линия 164" x2="16.398" y2="16.398" fill="none"
+                                stroke="#b8c0c5" stroke-linecap="round" stroke-width="2" />
+                            <line id="Линия_165" data-name="Линия 165" x1="16.398" y2="16.398" fill="none"
+                                stroke="#b8c0c5" stroke-linecap="round" stroke-width="2" />
+                        </g>
+                    </svg>
+                </button>
+                <form action="">
+                    <textarea name="" id="item-content" cols="30" rows="10"></textarea>
+                    <div>
+                        <input id="submit-new-item" type="button" value="Submit">
+                        <input id="delete-btn" type="button" value="Delete">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="confirm-delete-modal">
+        <div class="moddal-container">
+            <div class="modal-content">
+                <h1>Are you sure you want to delete this cell?</h1>
+                <div>
+                    <button id="yes">Yes</button>
+                    <button id="no">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+
+</body>
+
+</html>

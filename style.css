@@ -1,0 +1,207 @@
+* {
+    font-family: 'Rubik', sans-serif;
+}
+
+body {
+    height: 100vh;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.table {
+    height: 90vh;
+    overflow-y: auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table td, table th {
+    border: 1px solid #cfd5d8;
+    padding: 8px;
+}
+
+table td {
+    user-select: none;
+    cursor: pointer;
+    word-break: break-word;
+    color: #1e394f;
+    width: calc(100% / 5);
+    padding: 8px 4px;
+    font-size: 0.75rem;
+    height: 18vh;
+    text-align: center;
+}
+
+#add-item {
+    margin: auto;
+    display: flex;
+    margin-top: 20px;
+}
+
+.modal {
+    position: absolute;
+    display: flex;
+    /* visibility: hidden; */
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transform: scale(0);
+}
+
+@keyframes opacity-in {
+    from {
+        opacity: 0;
+        transform: scale(0);
+        visibility: hidden;
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+        visibility: visible;
+    }
+}
+
+@keyframes opacity-out {
+    from {
+        opacity: 1;
+        transform: scale(1);
+        visibility: visible;
+    }
+    to {
+        opacity: 0;
+        transform: scale(0);
+        visibility: hidden;
+    }
+}
+
+.modal.open {
+    animation-delay: 0.1s;
+    animation-name: opacity-in;
+    animation-duration: 0.4s;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+.modal.close {
+    animation-delay: 0.1s;
+    animation-name: opacity-out;
+    animation-duration: 0.4s;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+.modal-container {
+    border-radius: 5px;
+    opacity: 0;
+    transform: scale(0);
+    transition: 0.4s all;
+    position: relative;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    background: #eff1f2;
+    padding: 32px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.16);
+    border-radius: 8px;
+}
+
+form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.modal.open .modal-container {
+    opacity: 1;
+    transform: scale(1);
+    transition: 0.4s all;
+}
+
+#close-modal {
+    align-self: flex-end;
+    margin-bottom: 16px;
+    background: none;
+    outline: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+
+#submit-new-item {
+    border: none;
+    background: none;
+    outline: none;
+    background: #f31f46;
+    color: white;
+    height: 40px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+#delete-btn {
+    border: none;
+    background: none;
+    outline: none;
+    background: #60727d;
+    color: white;
+    height: 40px;
+    border-radius: 6px;
+}
+
+textarea {
+    resize: none;
+    border: none;
+    outline: none;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+#confirm-delete-modal {
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+#confirm-delete-modal .modal-content {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    margin: 0 16px;
+    color: white;
+}
+
+button#add-item {
+    border: none;
+    outline: none;
+    background-color: #f31f46;
+    color: white;
+    display: flex;
+    width: 80%;
+    max-width: 400px;
+    margin: 3vh auto 1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    border-radius: 6px;
+}
