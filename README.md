@@ -5,6 +5,7 @@
 Go to strapi folder and launch server 
 
 ```
+npm i
 npm start
 ```
 
